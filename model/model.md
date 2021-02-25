@@ -3,6 +3,10 @@
 
 Yann Lecun et al 1998년 개발한 CNN 알고리즘
 
+![image](https://user-images.githubusercontent.com/72767245/109137958-29cfff00-779d-11eb-8df3-255b525e40f0.png)
+
+
+
 - 1) C1 레이어: 입력 영상(32x32 사이즈의 이미지)을 6개의 5x5 필터와 컨볼루션 연산
   - 28 x 28 x 6
 ```
@@ -10,6 +14,7 @@ parameters: (가중치 * 입력 맵 개수 + 바이어스) * 특성맵 갯수 = 
 ```
 
 - 2) S2 레이어: 6장의 28x28 특성맵에 대해 서브 샘플링을 진행(stride = 2 : subsampling)
+  - 14 x 14 x 6
 ```
 parameters: (가중치 + 바이어스) * 특성맵 갯수 = (1 + 1) x 6 = 12개
 ```
