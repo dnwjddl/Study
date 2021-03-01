@@ -45,4 +45,27 @@
   - ReLU함수로 활성화
 
 6) **5 Conv2D**:
-7) 
+  - 256개의 3x3x192 커널을 사용해서 전 단계의 특성맵을 컨볼루션해줌
+  - stride와 zero-padding을 모두 1로 설정
+  - 13x13x256 특성맵을 얻음
+  - ReLU 활성화함수
+  - 3x3 overlapping max pooling을 stride 2로 시행
+  - 결과 6x6x256 특성맵을 얻음
+7) **6 FC**:
+  - 6x6x256 특성맵을 flatten 해줘서 6x6x256 = 9216차원의 벡터로 만들어줌
+  - 6번째 레이어 4096개의 뉴런과 fully connected 함
+  - ReLU함수로 활성화
+8) **7 FC**:
+  - 4096개의 뉴런으로 구성
+  - 전 단계의 4096개의 뉴런과 fully connected 되어있음
+  - ReLU함수로 활성화
+9) **8 FC**:
+  - 1000개의 뉴런으로 구성
+  - softmax함수를 적용
+
+### AlexNet 특징
+- ReLU함수
+- dropout
+- overlapping pooling
+- local response normalization(LRN)
+- data augmentation
